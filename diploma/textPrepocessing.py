@@ -19,3 +19,8 @@ stop_words = set(stopwords.words('english'))
 workData = ' '.join([word for word in workData.split() if word not in stop_words])
 
 print(workData)
+
+from textblob import TextBlob
+testimonial = TextBlob(workData)
+print(testimonial.sentiment)
+print(testimonial.sentiment.polarity)
