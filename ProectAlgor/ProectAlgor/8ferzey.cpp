@@ -71,9 +71,9 @@ int main ()
         for (int j = 0; j < 8; ++j)
         {
             if (board[i][j] == -1)
-                cout << ".Q";
+                cout << "[Q]";
             else
-                cout << "._";
+                cout << "[_]";
         }
         cout << endl;
     }
