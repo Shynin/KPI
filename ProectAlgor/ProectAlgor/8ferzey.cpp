@@ -7,13 +7,13 @@ void setQueen(int i, int j)
 {
     for (int x = 0; x < 8; ++x)
     {
-        ++board[x][j];
-        ++board[i][x];
+        ++board[x][j]; //по горизонтали
+        ++board[i][x]; //по вертикали
         int foo;
-        foo = j - i + x;
+        foo = j - i + x; //по диагонали
         if (foo >= 0 && foo < 8)
             ++board[x][foo];
-        foo = j + i - x;
+        foo = j + i - x; //по второй диагонали
         if (foo >= 0 && foo < 8)
             ++board[x][foo];
     }
@@ -62,7 +62,7 @@ bool tryQueen (int i)
 
 int main ()
 {
-    for (int i = 0; i < 8; ++i)
+    for (int i = 0; i < 8; ++i) // очищаем доску
         for (int j = 0; j < 8; ++j)
             board[i][j] = 0;
     tryQueen(0);
