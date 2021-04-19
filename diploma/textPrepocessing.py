@@ -3,20 +3,27 @@ import string
 import nltk
 import re
 from nltk.corpus import stopwords
+# from nltk. import stopwords
+
+
+# to lower case
+workData = text.lower()
 
 # removing punctuation with translate
-# workData = text.translate(str.maketrans('','',string.punctuation))
+workData = workData.translate(str.maketrans('', '', string.punctuation))
+
 # removing punctuation with regex
-workData = re.sub(r"[,“–”)(@\'?\.:$%_]", "", text)
-
-#to lower case
-workData = workData.lower()
-#contractions
+# workData = re.sub(r"[,“–”)(@\'?\.:$%_]", "", text)
 
 
-#removing stop words
+# removing stop words
 stop_words = set(stopwords.words('english'))
-workData = ' '.join([word for word in workData.split() if word not in stop_words])
+workData = ' '.join(
+    [word for word in workData.split() if word not in stop_words])
+
+print(workData)
+# contractions
+
 
 # print(workData)
 
